@@ -1,11 +1,7 @@
-/* nejsme vcerejsi, pouzivame moderni box model */
+
 *, ::after, ::before { box-sizing: border-box; }
 
-/*
- BARVY
- pozadi           #f5f5f5
- dekorace nadpisů #629edb
-*/
+
 
 
 body {
@@ -13,31 +9,336 @@ body {
     padding: 0;
     background-color: #f5f5f5;
     font-family: 'Merriweather', serif;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
 }
 
 
-/* HLAVICKA */
 
 .titulek {
     font-family: 'Raleway', serif;
+    font-size: 2.5rem;
+    padding-top: 2rem;
+    margin:0;
 }
 
 
-/* MENU */
+.hlavicka {
+    background-image: url(island-hlavicka.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.perex {    
+    margin: 1.5rem 5rem;
+    padding: 0;
+    font-size: 12px;
+    padding-bottom: 0.5rem;
+}
+
+.autor {
+        margin: 0;
+        padding-bottom: 0.5rem;
+        text-align: center;
+        border-top: 3px solid white;
+        display: inline-block;
+}
+
+
+.menu {
+    text-align: center;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+.menu li {
+    list-style-type: none;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+    border-bottom: 1px solid rgb(207, 206, 206);
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(207, 206, 206);
+    text-transform: uppercase;
+    font-size: 12px;
+}
 
 
 
 
-/* OBSAH */
+h2, 
+p {
+    padding: 0.5rem 1rem;
+}   
+h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+}
+
+p {
+    font-size: 12px;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.popisek {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    color: grey;
+    font-size: 10px;
+}
+
+.popisek a {
+    font-size: 10px;
+    color: grey;
+}
+
+hr {
+    border: 1px #629edb solid;
+    width: 50px;
+    position: absolute;
+    margin: 0;
+}
+
+.fotogalerie {
+    padding-bottom: 2rem;
+}
+.foto {
+    margin: 0.5rem 0;
+}
+
+.foto a {
+    color: rgb(207, 206, 206);
+}
+
+.popisek-copy {
+    color:rgb(207, 206, 206)
+}
+.galerie {
+    padding-top: 1rem;
+}
 
 
 
+.paticka {
+    color: grey;
+    font-size: 10px;
+    background-color: rgb(231, 231, 231);
+    margin: 0;
+}
+.paticka a {
+    color: grey;
+}
+.paticka p {
+    margin: 0;
+    margin-top: 0.5rem;
+    
+}
 
-/* FOTOGALERIE */
+@media screen and (min-width:501px) {
+    .perex {
+        font-size:14px;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+    .menu li {
+        border-bottom: none;
+        margin: 0;
+    }
+
+    .obraz_obsah {
+        position: relative;
+    }
+
+    .popisek {
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+        color: white;
+        padding-bottom: 0.5rem;
+    }
+
+    .popisek a {
+        color: white;
+    }
+
+    .galerie {
+        display: flex;
+       flex-wrap: wrap;
+    }
+
+    .foto-album {
+        flex-basis: 50%;
+        position: relative;
+    }
+    .foto {
+        display: block;
+        height: 100%;
+        margin: 0;
+    }
+    
+    .foto-popisek {
+        display: flex;
+        justify-content: center;
+    }
+    .popisek-titul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 0;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 0.5rem 0;
+        visibility: hidden;
+        text-align: center;
+        text-shadow: 1px 1px black;
+        transition: 0.5s ease;
+    }
+
+    .foto-album:hover .popisek-titul {
+        visibility: visible;
+    }
+
+    .popisek-copy  {
+        color: white;
+        font-size: 12px;
+    }
+
+    .popisek-copy a {
+        font-size: 12px;
+        color: white;
+    }
+}
+
+@media screen and (min-width:1001px) {
+
+    .hlavicka {
+        height: auto;
+        position: relative;
+        height: 400px;
+    }
+
+    .titulek {
+        font-size: 4rem;
+    }
+    .perex {
+        margin: 0.5rem 20rem;
+        font-size: 14px;
+    }
+    .autor {
+        font-size: 14px;
+    }
+    .obsah {
+        margin: 0;
+        max-width: 960px;
+        margin: auto;
+        background-color:white;
+        position: absolute;
+        left: 20%;
+        right: 20%;
+        top: 35%;
+        box-shadow: 2px 2px 2px 2px grey;
+    }
+
+    .uvod {
+        position: relative;
+        float: right;
+        width: 70%;
+    }
+    
+    .menu {
+        display: block;
+        width: 20%;
+        margin-left:2rem;
+    }
+    .menu {
+        position: absolute;
+    }
+
+    .menu li {
+        border-bottom: 1px solid rgb(207, 206, 206);
+        text-align: start;
+    }
+
+    .podsekcia1 {
+        padding-right: 10rem;
+    }
+
+    .podsekcia2 {
+        padding-left: 10rem;
+    }
+    .popisek {
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+        color: white;
+        padding-bottom: 0.5rem;
+    }
+
+    .popisek a {
+        color: white;
+    }
+
+    .galerie {
+        display: flex;
+       flex-wrap: wrap;
+    }
+
+    .foto-album {
+        flex-basis: 50%;
+    }
+
+    .foto {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
 
 
 
+    .foto-popisek {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 30%;
+        background-color: black;
+        visibility: hidden;
+        transition: 0.8s;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+    }
 
-/* PATICKA */
+    .foto-album:hover .foto-popisek {
+        visibility: visible;
+        opacity: 0.8;
+        top: 70%;
+    }
+
+    .popisek-titul {
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .popisek-copy {
+        color: white;
+    }
+
+
+}
